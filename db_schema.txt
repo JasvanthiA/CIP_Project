@@ -1,0 +1,44 @@
+create table PatientDetails(
+PatientID int auto_increment,
+PatientName varchar(255),
+Age int,
+Gender varchar(255),
+Address varchar(255),
+Mobile bigint,
+Ailment varchar(255),
+Primary Key(PatientID)
+);
+
+
+create table Appointment (
+PatientID int,
+Location varchar(255),
+AppointmentDate date,
+AppointmentTime time
+);
+
+
+CREATE PROCEDURE InsertAppointment(
+    IN p_PatientID INT,
+    IN p_Location VARCHAR(255),
+    IN p_AppointmentDate DATE
+)
+BEGIN
+    DECLARE v_AppointmentTime TIME;
+
+    -- Determine AppointmentTime based on Location
+    SET v_AppointmentTime = CASE
+        WHEN p_Location = 'Anna Nagar-Chennai' THEN '16:00:00'
+        WHEN p_Location = 'Pallavaram-Chennai' THEN '18:00:00'
+        WHEN p_Location = 'Vellore' THEN '11:00:00'
+        WHEN p_Location = 'Katpadi' THEN '13:00:00'
+        ELSE '12:00:00' -- Default time if location doesn't match
+    END;
+
+    -- Insert the row into the Appointments table
+    INSERT INTO Appointment (PatientID, Location, AppointmentDate, AppointmentTime)
+    VALUES (p_PatientID, p_Location, p_AppointmentDate, v_AppointmentTime);
+END 
+
+
+
