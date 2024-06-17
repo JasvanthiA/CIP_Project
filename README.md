@@ -2,7 +2,7 @@
 ## Flask web application for Code in place final project
 
 ## Features
--List of features included in the project
+List of features included in the project
     -Patient registration
     -Appointment Booking
     -View Appointment History
