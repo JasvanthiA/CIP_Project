@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Database configuration
 db_config = {
     'user': 'root',
-    'password': 'MachineLearning@24',
+    'password': '**************',
     'host': '127.0.0.1',
     'database': 'cip_db',
     'raise_on_warnings': True
