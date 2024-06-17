@@ -11,10 +11,10 @@
 Screenshots for the web application are listed below
 
 Example:
-![Home Page](url-to-screenshot)
-![Patient Registration Page](url-to-screenshot)
-![Appointment Booking Page](url-to-screenshot)
-![Appointment History Page](url-to-screenshot)
+![Home Page](CIP_application_screenshot/accu_home_page.png)
+![Patient Registration Page](CIP_application_screenshot/accu_patient_reg_page.png)
+![Appointment Booking Page](CIP_application_screenshot/accu_appointment_booking_page.png)
+![Appointment History Page](CIP_application_screenshot/accu_appointment_history_page.png)
 
 
 ## Installation
