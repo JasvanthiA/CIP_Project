@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Accutouch Therapy</h1>
+            <nav>
+                <ul>
+                    <li id="current_page">Home</li>
+                    <li><a href="registration.html">Patient Registration</a></li>
+                    <li><a href="appointment_booking.html">Appointment Booking</a></li>
+                    <li><a href="appointment_history.html">Appointment History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="split-container">
+            <div class="split left">
+                <img src="../static/images/wellness.png" alt="Description of image">
+            </div>
+            <div class="split right">
+                <h2>Acupuncture - A Life Science</h2>
+                <h4>Acupuncture therapy helps us to harmonise the five element energy flow by observing
+                    the vital energy from the universe by stimulating the exact acupuncture point 
+                    present in our skin through pulse diagnosis
+                </h4>
+                <h5>"While there is no pill for every ill,
+                    there is an ill following every pill"
+                </h5>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

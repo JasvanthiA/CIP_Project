@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Accutouch Therapy</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="registration.html">Patient Registration</a></li>
+                    <li><a href="appointment_booking.html">Appointment Booking</a></li>
+                    <li id="current_page">Appointment History</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="split-container">
+            <div class="split left">
+                <img src="../static/images/wellness.png" alt="Description of image">
+            </div>
+            <div class="split right">
+                <div style="width:100%; display: flex; justify-content: center" class="bg-img">
+                    <form action="/get_appointment_history" method ='post' class="container_form" id="treatmentForm">
+                      <h1 style="text-align:center">Appointment History</h1>
+                      <table style="margin:auto;">
+                      <tr>
+                      <td class="label"><label for="patient_id"><b>Patient ID</b></label></td>
+                      <td><input type="number" placeholder="Enter your patient id" id="patient_id" name="patient_id" required></td>
+                    </tr>
+                      </table>
+                      <table id="display_table">
+                        <tr>
+                            <th>Location</th>
+                            <th>Appointment Date</th>
+                        </tr>
+                      </table>
+                      <button type="submit" id="submitButton" class="btn">Get appointment history</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">&times;</span>
+            <h2 style="text-align: center;" id="status"></h2>
+            <h3 style="text-align: center;" id="treatment_details"></h3>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='script/script.js') }}"></script>
+</body>
+</html>

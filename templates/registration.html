@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Accutouch Therapy</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li id="current_page">Patient Registration</li>
+                    <li><a href="appointment_booking.html">Appointment Booking</a></li>
+                    <li><a href="appointment_history.html">Appointment History</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="split-container">
+            <div class="split left">
+                <img src="../static/images/wellness.png" alt="Description of image">
+            </div>
+            <div class="split right">
+              <div style="width:100%; display: flex; justify-content: center" class="bg-img">
+                <form action="/add" method ='post' class="container_form" id="patientForm">
+                  <h1 style="text-align:center">Patient Registration</h1>
+                  <table style="margin:auto;">
+                  <tr>
+                  <td class="label"><label for="full_name"><b>Name</b></label></td>
+                  <td><input type="text" placeholder="Enter your full name" id="full_name" name="full_name" pattern="[A-Za-z\s]+" required></td>
+                </tr>
+                <tr>
+                  <td class="label"><label for="age"><b>Age</b></label></td>
+                  <td><input type="number" placeholder="Enter your age" id="age" name="age" min="1" max="99" required></td>
+                </tr> 
+                <tr>
+                  <td style="font-weight: bold;">Gender</td>
+                  <td>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                  </td>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tr>
+                  <tr> <td class="label"><label for="address"><b>Address</b></label></td>
+                  <td><input type="text" placeholder="Enter your current city" id="address" name="address" required></td>
+                </tr>
+                <tr>
+                  <td class="label"><label for="mobile"><b>Mobile</b></label></td>
+                  <td><input type="text" placeholder="Enter your mobile number" id="mobile" name="mobile" pattern="[0-9]{10}" required></td>
+                </tr>
+                <tr>
+                  <td class="label"><label for="ailment"><b>Ailment</b></label></td>
+                  <td><input type="text" placeholder="Enter your health problems" id="ailment" name="ailment" required></td>
+                </tr>  
+                </table>
+                  <button type="submit" id="submitButton" class="btn">Register</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </main>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span id="close-btn" class="close-btn">&times;</span>
+          <h2 style="text-align: center;" id="status"></h2>
+          <h3 style="text-align: center;" id="patient-id"></h3>
+      </div>
+  </div>
+    <script src="{{ url_for('static',filename='script/script.js') }}"></script>
+</body>
+</html>
+
